@@ -1,0 +1,635 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Poppins:wght@400&family=Poppins:wght@700&display=swap");
+/* RESET CSS */
+* {
+  padding: 0;
+  margin: 0;
+  /* transition: 0.2s ease-in; */
+}
+
+/* SCROLLBAR CSS */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(50, 50, 50);
+  border-radius: 1rem;
+}
+
+html {
+  font-size: 8px;
+}
+
+body {
+  height: 90vh;
+}
+
+/* UTILITY CLASSES */
+
+.h-tertiary {
+  font-size: 1.5rem;
+  color: gray;
+  font-family: Poppins;
+}
+
+/* NAVBAR CSS */
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1.07fr;
+  padding: 1.5rem 0rem;
+  align-items: center;
+  width: 100%;
+  /* position: fixed; */
+}
+
+.logo {
+  text-align: right;
+  padding-right: 2rem;
+  border-right: 0.1rem solid gray;
+}
+
+.logo a {
+  color: #f3ae9f;
+  font-family: Poppins;
+  font-size: 3.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 80%;
+}
+
+.navItems {
+  display: flex;
+  margin-left: 1rem;
+}
+
+.active {
+  color: #f3ae9f !important;
+}
+
+.subNavItem {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: Open Sans;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 70%; /* 1.5057rem */
+  padding: 1rem 2rem;
+  transition: all .5s ease;
+}
+
+.subNavItem:hover{
+  background-color: rgb(42, 33, 33);
+  border-radius: 5rem;
+}
+
+.subNavItem svg {
+  width: 2.3rem;
+}
+
+.subNavItem p {
+  padding: 1rem;
+}
+
+.loginBtn {
+  background: #f3ae9f;
+  font-family: Open Sans;
+  outline: none;
+  font-size: 2.1509rem;
+  padding: 0.7rem 4rem;
+  width: auto;
+  border: none;
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.loginBtn:active {
+  transform: scale(0.8);
+  background: #ffd7ce;
+}
+
+.loginBtn:hover{
+  background: #ffd7ce;
+}
+
+.menuBtnCover {
+  display: none;
+  right: 4rem;
+  margin-left: 2rem;
+}
+
+.menuBtn {
+  width: 2.8rem;
+  height: 3px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.menuBtn:before {
+  content: "";
+  background-color: #fff;
+  width: 2.8rem;
+  height: 3px;
+  position: absolute;
+  transform: translateY(-1rem);
+}
+
+.menuBtn:after {
+  content: "";
+  background-color: #fff;
+  width: 2.8rem;
+  height: 3px;
+  position: absolute;
+  transform: translateY(1rem);
+}
+
+/* HERO SECTION CSS */
+.superContainer {
+  /* border: 1px solid white; */
+  position: absolute;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  display: flex;
+  justify-content: center;
+}
+
+.sideBar{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  /* backdrop-filter: brightness(.5); */
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sideBar #leftSubContainer{
+  transition: all .5s ease;
+  position: absolute;
+  right: 0;
+  transform: translateX(100%);
+  height: -webkit-fill-available;
+  width: 40%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2.3fr 6fr;
+  grid-gap: 2.5rem;
+  padding: 2rem 0;
+  width: 140rem;
+  max-width: 140rem;
+  height: -webkit-fill-available;
+}
+
+.subContainer {
+  border-radius: 1rem;
+  border: 0.1rem solid rgba(141, 153, 218, 0);
+  background: #181818;
+}
+
+.subContainer h3 {
+  font-family: Poppins;
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: gray;
+}
+
+/* LEFT SUBCONTAINER CSS */
+
+#leftSubContainer {
+  padding: 2rem;
+}
+
+.subContainerItem {
+  margin-bottom: 1.7rem;
+}
+
+.chatImagesBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3ae9f;
+  transition: all 0.5s ease;
+  font-family: Open Sans;
+  font-size: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.chatImagesBtn:hover {
+  background: #ffd7ce;
+}
+
+.chatImagesBtn p {
+  margin-left: 1rem;
+}
+
+.chatImagesBtn:focus {
+  outline: none;
+}
+
+.bots {
+  border-bottom: 0.1rem solid rgb(44, 44, 44);
+}
+
+.bot {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.5s ease;
+}
+
+.botActive {
+  background: rgb(44, 44, 44);
+}
+
+.bot:hover {
+  background: rgb(61, 61, 61);
+}
+
+.bot .botIcon {
+  width: 4.5rem;
+  margin-right: 1rem;
+}
+
+.bot .botInfo .botName {
+  color: white;
+}
+
+.botInfo p {
+  font-size: 1.5rem;
+  font-family: Open Sans;
+  color: gray;
+}
+
+.createBotBtn {
+  background: none;
+  color: white;
+  font-size: 1.7rem;
+  border: none;
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+
+.createBotBtn:hover {
+  background: rgb(67 51 51);
+}
+
+.createBotBtn svg {
+  width: 3rem;
+  margin-right: 2rem;
+}
+
+.createBotBtn:focus {
+  outline: none;
+}
+
+/* RIGHT SUBCONTAINER CSS */
+#rightSubContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+.rightSubContainerCover{
+  position: absolute;
+  background:#181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 2rem;
+  z-index: 1;
+  height: 100%;
+  transition: all .5s ease;
+}
+
+.subContainerTopBar {
+  background: #2f2f2f;
+  padding: 0.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.subContainerTopBar .bot {
+  border-radius: 0;
+  margin: 0;
+}
+
+.subContainerTopBar .bot:hover {
+  background: none;
+}
+
+.topBarBtnContainer {
+  display: flex;
+}
+
+.topBarBtnContainer .createBotBtn svg {
+  width: 2.3rem;
+  margin-right: 1rem;
+}
+
+.messages {
+  position: absolute;
+  width: -webkit-fill-available;
+  bottom: 10rem;
+  max-height: calc(100% - 19rem);
+  overflow-y: auto;
+  padding: 1rem 2rem;
+}
+
+.message {
+  clear: both;
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.message .botIcon {
+  width: 4rem;
+}
+
+.message-sender,
+.message-receiver {
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+}
+
+.message-sender {
+  float: left;
+  font-family: Poppins;
+  font-size: 1.4rem;
+}
+
+.message-sender p {
+  background-color: #2f2f2f;
+  max-width: 60%;
+  padding: 1rem;
+  color: white;
+  border-radius: 1rem 1rem 1rem 0;
+  margin-left: 1.5rem;
+}
+
+.message-receiver {
+  float: right;
+  font-family: Poppins;
+  font-size: 1.4rem;
+  flex-direction: row-reverse;
+}
+
+.message-receiver p {
+  background-color: #f3ae9f;
+  padding: 1rem;
+  border-radius: 1rem 1rem 0rem 1rem;
+  margin-right: 1.5rem;
+}
+
+.messageBar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.messageBar form {
+  display: flex;
+  padding: 2rem;
+}
+
+.messageBar input {
+  width: -webkit-fill-available;
+  background-color: #2f2f2f;
+  padding: 1.5rem;
+  border-radius: 7rem;
+  color: white;
+  font-family: Open Sans;
+  outline: none;
+  border: none;
+  margin-right: 2rem;
+}
+
+.messageBar form button {
+  background: #f3ae9f;
+  border: none;
+  width: 5.5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.messageBar form button:active {
+  transform: scale(0.8);
+  background: #ffd7ce;
+}
+
+/* RESPONSIVE CSS */
+
+@media only screen and (max-width: 1920px) {
+  html {
+    font-size: 10px;
+  }
+
+  .navbar {
+    grid-template-columns: 1fr 3.1fr 1.07fr;
+  }
+}
+
+
+@media only screen and (max-width: 1800px) {
+  html {
+    font-size: 9px;
+  }
+  .navbar {
+    grid-template-columns: 1fr 2.9fr 1.07fr;
+  }
+}
+
+
+@media only screen and (max-width: 1750px) {
+  html {
+    font-size: 8.5px;
+  }
+}
+
+
+@media only screen and (max-width: 1584px) {
+  .navbar {
+    grid-template-columns: 1fr 3.2fr 1.07fr;
+  }
+}
+
+
+@media only screen and (max-width: 1550px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+
+@media only screen and (max-width: 1460px) {
+  .navbar {
+    grid-template-columns: 1fr 3.6fr 1.07fr;
+  }
+}
+
+
+@media only screen and (max-width: 1420px) {
+  html {
+    font-size: 7px;
+  }
+  .navbar {
+    grid-template-columns: 1fr 2.8fr 1.07fr;
+  }
+}
+
+
+@media only screen and (max-width: 1368px) {
+  .navbar {
+    grid-template-columns: 1fr 3fr 1.07fr;
+  }
+}
+
+
+@media only screen and (max-width: 1280px) {
+  .navbar {
+    grid-template-columns: 1fr 3.5fr 1.07fr;
+  }
+}
+
+
+@media only screen and (max-width: 1208px) {
+  .navbar {
+    grid-template-columns: 1fr 4fr 1.07fr;
+  }
+}
+
+
+@media only screen and (max-width: 1155px) {
+  .navbar {
+    grid-template-columns: 1fr 4.7fr 1.07fr;
+  }
+}
+
+
+@media only screen and (max-width: 1090px) {
+  .navbar {
+    grid-template-columns: 1fr 6fr 1.07fr;
+  }
+  .container {
+    margin: 0 3rem;
+  }
+}
+
+
+@media only screen and (max-width: 1042px) {
+  .navbar {
+    grid-template-columns: 1fr 8fr 1.07fr;
+    margin: 0 2rem;
+    width: -webkit-fill-available;
+  }
+}
+
+
+@media only screen and (max-width: 852px) {
+  .botDescription {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 750px) {
+  .navbar {
+    margin: 0 3rem;
+  }
+}
+
+@media only screen and (max-width: 675px) {
+  html {
+    font-size: 6.5px;
+  }
+
+  .navbar{
+    grid-template-columns: 1fr 8fr 1.07fr .5fr;
+  }
+
+  .superContainer #leftSubContainer {
+    display: none;
+  }
+
+  .sideBar .menuBtnCover{
+    top: 3rem;
+    right: 5rem;
+    float: right;
+    margin: 1rem 2rem;
+  }
+
+  .sideBar .menuBtn{
+    width: 0;
+  }
+
+  .sideBar .menuBtn::after{
+    transform: rotate(45deg);
+  }
+
+  .sideBar .menuBtn::before{
+    transform: rotate(-45deg);
+  }
+  .menuBtnCover{
+    display: block;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 528px){
+  .sideBar #leftSubContainer{
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 494px){
+  .navbar .navItems p, .navbar .loginBtn{
+    display: none;
+  }
+  .navbar{
+    grid-template-columns: 1fr 5fr .5fr .5fr;
+  }
+
+  .sideBar #leftSubContainer{
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 425px){
+  html{
+    font-size: 7.5px;
+  }
+}
+@media only screen and (max-width: 352px){
+  .sideBar #leftSubContainer{
+    width: 66%;
+  }
+}
